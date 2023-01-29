@@ -7,21 +7,19 @@
 
 <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <a href="/" class="navbar-brand d-flex align-items-center">
             <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="img/icon-1.png" alt=""
-                    style="width: 45px;">CryptoCoin</h2>
+                    style="width: 45px;">Latter Making</h2>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="nav-link" href=""><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                <a href="/" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
+                <a href="/about" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
+                <a href="/contact" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
+                <a href="" class="nav-item nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
             </div>
         </div>
     </nav>
