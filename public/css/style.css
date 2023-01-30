@@ -1,8 +1,8 @@
 /********** Template CSS **********/
 :root {
-    --primary: #16D5FF;
+    --primary: #16d5ff;
     --secondary: #999999;
-    --light: #F2F8FE;
+    --light: #f2f8fe;
     --dark: #111111;
 }
 
@@ -23,30 +23,28 @@ h6,
     font-weight: 500 !important;
 }
 
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
     z-index: 99999;
 }
 
 #spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
 }
 
-
 /*** Button ***/
 .btn {
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn.btn-primary {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .btn-square {
@@ -74,11 +72,10 @@ h6,
     font-weight: normal;
 }
 
-
 /*** Navbar ***/
 .navbar.sticky-top {
     top: -100px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .navbar .navbar-brand {
@@ -108,13 +105,13 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
 
     .navbar .navbar-nav {
-        border-top: 1px solid #EEEEEE;
+        border-top: 1px solid #eeeeee;
     }
 }
 
@@ -126,28 +123,26 @@ h6,
         top: 150%;
         opacity: 0;
         visibility: hidden;
-        transition: .5s;
+        transition: 0.5s;
     }
 
     .navbar .nav-item:hover .dropdown-menu {
         top: 100%;
         visibility: visible;
-        transition: .5s;
+        transition: 0.5s;
         opacity: 1;
     }
 }
 
 .navbar .btn:hover {
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     background: var(--primary) !important;
 }
 
-
 /*** Header ***/
-.hero-header .breadcrumb-item+.breadcrumb-item::before {
+.hero-header .breadcrumb-item + .breadcrumb-item::before {
     color: var(--secondary);
 }
-
 
 /*** Service ***/
 .service-item {
@@ -165,7 +160,7 @@ h6,
     border: 80px solid;
     transform: rotate(45deg);
     opacity: 1;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .service-item.bg-white::after {
@@ -173,13 +168,12 @@ h6,
 }
 
 .service-item.bg-light::after {
-    border-color: transparent transparent #FFFFFF transparent;
+    border-color: transparent transparent #ffffff transparent;
 }
 
 .service-item:hover::after {
     opacity: 0;
 }
-
 
 /*** Roadmap ***/
 .roadmap-carousel {
@@ -203,7 +197,7 @@ h6,
     top: 6px;
     left: 50%;
     margin-left: -15px;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 2px solid var(--primary);
     transform: rotate(45deg);
     display: flex;
@@ -265,7 +259,7 @@ h6,
     font-size: 22px;
     color: var(--light);
     background: var(--primary);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .roadmap-carousel .owl-nav .owl-prev:hover,
@@ -273,7 +267,6 @@ h6,
     color: var(--primary);
     background: var(--dark);
 }
-
 
 /*** FAQs ***/
 .accordion .accordion-item {
@@ -287,7 +280,7 @@ h6,
 }
 
 .accordion .accordion-button:not(.collapsed) {
-    color: #FFFFFF;
+    color: #ffffff;
     background: var(--primary);
     box-shadow: none;
 }
@@ -300,7 +293,6 @@ h6,
     padding: 15px 0 0 0;
 }
 
-
 /*** Footer ***/
 .footer .btn.btn-link {
     display: block;
@@ -310,7 +302,7 @@ h6,
     color: var(--secondary);
     font-weight: normal;
     text-transform: capitalize;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .footer .btn.btn-link::before {
@@ -334,13 +326,13 @@ h6,
 }
 
 .footer .btn.btn-square:hover {
-    color: #FFFFFF;
+    color: #ffffff;
     background: var(--primary);
 }
 
 .footer .copyright {
     padding: 25px 0;
-    border-top: 1px solid rgba(17, 17, 17, .1);
+    border-top: 1px solid rgba(17, 17, 17, 0.1);
 }
 
 .footer .copyright a {
@@ -349,4 +341,41 @@ h6,
 
 .footer .copyright a:hover {
     color: var(--dark);
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 190px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-registration {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.form-registration input {
+    border-radius: 0;
+    margin-bottom: -1px;
 }

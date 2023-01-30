@@ -19,7 +19,7 @@
                 <a href="/" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                 <a href="/about" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                 <a href="/contact" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
-                <a href="" class="nav-item nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                <a href="/login" class="nav-item nav-link {{ Request::is('login') || Request::is('register') ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
             </div>
         </div>
     </nav>
