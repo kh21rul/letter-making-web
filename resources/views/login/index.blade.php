@@ -3,7 +3,13 @@
 @section('container')
 <div class="row justify-content-center mt-5 mb-5">
     <div class="col-md-3">
+
         <main class="form-signin">
+            @if (session()->has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
             <h1 class="h3 mb-3 fw-normal text-center">Silahkan Login</h1>
             <form>
                 <div class="form-floating">
