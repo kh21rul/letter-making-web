@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DomisiliController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,13 +28,18 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
-
-Route::get('/error', function () {
-    return view('errors.404');
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'index')->name('login')->middleware('guest');
+    Route::post('/login', 'authenticate');
+    Route::post('/logout', 'logout');
 });
+
+Route::controller(RegisterController::class)->group(function () {
+    Route::get('/register', 'index')->middleware('guest');
+    Route::post('/register', 'store');
+});
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/domisili', [DomisiliController::class, 'index']);
 Route::get('/domisili/cetak_pdf', [DomisiliController::class, 'cetak_pdf']);
