@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Domisili;
-use App\Http\Requests\StoreDomisiliRequest;
-use App\Http\Requests\UpdateDomisiliRequest;
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Usaha;
+use Illuminate\Http\Request;
 
-
-class DomisiliController extends Controller
+class DashboardUsaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +14,11 @@ class DomisiliController extends Controller
      */
     public function index()
     {
-    }
-
-    public function cetak_pdf()
-    {
-        $domisili = Domisili::all();
-
-        $pdf = Pdf::loadView('welcome');
-        return $pdf->download('invoice.pdf');
+        return view('dashboard.usahas.index', [
+            'title' => 'Usaha',
+            'active' => 'usaha',
+            'usahas' => Usaha::latest()->paginate(10),
+        ]);
     }
 
     /**
@@ -40,10 +34,10 @@ class DomisiliController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDomisiliRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDomisiliRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,21 +45,25 @@ class DomisiliController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Domisili  $domisili
+     * @param  \App\Models\Usaha  $usaha
      * @return \Illuminate\Http\Response
      */
-    public function show(Domisili $domisili)
+    public function show(Usaha $usaha)
     {
-        //
+        return view('dashboard.usahas.show', [
+            'title' => 'Usaha',
+            'active' => 'usaha',
+            'usaha' => $usaha,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Domisili  $domisili
+     * @param  \App\Models\Usaha  $usaha
      * @return \Illuminate\Http\Response
      */
-    public function edit(Domisili $domisili)
+    public function edit(Usaha $usaha)
     {
         //
     }
@@ -73,11 +71,11 @@ class DomisiliController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDomisiliRequest  $request
-     * @param  \App\Models\Domisili  $domisili
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Usaha  $usaha
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDomisiliRequest $request, Domisili $domisili)
+    public function update(Request $request, Usaha $usaha)
     {
         //
     }
@@ -85,10 +83,10 @@ class DomisiliController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Domisili  $domisili
+     * @param  \App\Models\Usaha  $usaha
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Domisili $domisili)
+    public function destroy(Usaha $usaha)
     {
         //
     }

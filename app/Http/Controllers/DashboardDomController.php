@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usaha;
-use App\Http\Requests\StoreUsahaRequest;
-use App\Http\Requests\UpdateUsahaRequest;
+use App\Models\Domisili;
+use Illuminate\Http\Request;
 
-class UsahaController extends Controller
+class DashboardDomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,11 @@ class UsahaController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.domisilis.index', [
+            'title' => 'Domisili',
+            'active' => 'domisili',
+            'domisilis' => Domisili::latest()->paginate(10),
+        ]);
     }
 
     /**
@@ -31,10 +34,10 @@ class UsahaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreUsahaRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUsahaRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,21 +45,25 @@ class UsahaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Usaha  $usaha
+     * @param  \App\Models\Domisili  $domisili
      * @return \Illuminate\Http\Response
      */
-    public function show(Usaha $usaha)
+    public function show(Domisili $domisili)
     {
-        //
+        return view('dashboard.domisilis.show', [
+            'title' => 'Domisili',
+            'active' => 'domisili',
+            'domisili' => $domisili,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Usaha  $usaha
+     * @param  \App\Models\Domisili  $domisili
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usaha $usaha)
+    public function edit(Domisili $domisili)
     {
         //
     }
@@ -64,11 +71,11 @@ class UsahaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateUsahaRequest  $request
-     * @param  \App\Models\Usaha  $usaha
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Domisili  $domisili
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUsahaRequest $request, Usaha $usaha)
+    public function update(Request $request, Domisili $domisili)
     {
         //
     }
@@ -76,10 +83,10 @@ class UsahaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Usaha  $usaha
+     * @param  \App\Models\Domisili  $domisili
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usaha $usaha)
+    public function destroy(Domisili $domisili)
     {
         //
     }

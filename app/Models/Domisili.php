@@ -9,5 +9,10 @@ class Domisili extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['noSurat', 'nama', 'tempatTglLahir', 'kelamin', 'negara', 'pendidikan', 'agama', 'pekerjaan', 'status_pernikahan', 'nik', 'alamat', 'keterangan', 'ttd'];
+    protected $guarded = ['id'];
+
+    public function getRouteKeyName()
+    {
+        return 'noSurat';
+    }
 }

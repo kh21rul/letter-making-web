@@ -17,19 +17,17 @@ class DomisiliFactory extends Factory
     public function definition()
     {
         return [
-            'noSurat' => $this->faker->unique()->numberBetween(1, 100),
+            'kodeSurat' => $this->faker->word,
+            'noSurat' => $this->faker->randomNumber(),
             'nama' => $this->faker->name,
-            'tempatTglLahir' => $this->faker->city . ', ' . $this->faker->date('d-m-Y'),
-            'kelamin' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
-            'negara' => $this->faker->country,
-            'pendidikan' => $this->faker->randomElement(['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3']),
-            'agama' => $this->faker->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu']),
-            'pekerjaan' => $this->faker->jobTitle,
-            'status_pernikahan' => $this->faker->randomElement(['Belum Menikah', 'Menikah', 'Cerai Hidup', 'Cerai Mati']),
-            'nik' => $this->faker->unique()->numberBetween(1, 100),
-            'alamat' => $this->faker->address,
-            'keterangan' => $this->faker->text(100),
-            'ttd' => $this->faker->name,
+            'nik' => $this->faker->randomNumber(),
+            'tempatTglLahir' => $this->faker->word,
+            'pekerjaan' => $this->faker->word,
+            'alamat' => $this->faker->text,
+            'keterangan' => $this->faker->text,
+            'tglSurat' => $this->faker->date(),
+            'ttd' => $this->faker->word,
+            'namaTtd' => $this->faker->word,
         ];
     }
 }

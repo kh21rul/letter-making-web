@@ -15,19 +15,17 @@ return new class extends Migration
     {
         Schema::create('domisilis', function (Blueprint $table) {
             $table->id();
-            $table->integer('noSurat');
+            $table->string('kodeSurat');
+            $table->integer('noSurat')->unique();
             $table->string('nama');
-            $table->string('tempatTglLahir');
-            $table->string('kelamin');
-            $table->string('negara');
-            $table->string('pendidikan');
-            $table->string('agama');
-            $table->string('pekerjaan');
-            $table->string('status_pernikahan');
             $table->integer('nik');
+            $table->string('tempatTglLahir');
+            $table->string('pekerjaan');
             $table->text('alamat');
             $table->text('keterangan');
+            $table->date('tglSurat');
             $table->string('ttd');
+            $table->string('namaTtd');
             $table->timestamps();
         });
     }

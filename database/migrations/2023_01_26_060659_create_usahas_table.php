@@ -15,6 +15,17 @@ return new class extends Migration
     {
         Schema::create('usahas', function (Blueprint $table) {
             $table->id();
+            $table->string('kodeSurat');
+            $table->integer('noSurat')->unique();
+            $table->string('nama');
+            $table->integer('nik');
+            $table->string('tempatTglLahir');
+            $table->string('pekerjaan');
+            $table->text('alamat');
+            $table->text('keterangan');
+            $table->date('tglSurat');
+            $table->string('ttd');
+            $table->string('namaTtd');
             $table->timestamps();
         });
     }

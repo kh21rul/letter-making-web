@@ -17,7 +17,17 @@ class UsahaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'kodeSurat' => $this->faker->word,
+            'noSurat' => $this->faker->randomNumber(),
+            'nama' => $this->faker->name,
+            'nik' => $this->faker->randomNumber(),
+            'tempatTglLahir' => $this->faker->word,
+            'pekerjaan' => $this->faker->word,
+            'alamat' => $this->faker->text,
+            'keterangan' => $this->faker->text,
+            'tglSurat' => $this->faker->date(),
+            'ttd' => $this->faker->word,
+            'namaTtd' => $this->faker->word,
         ];
     }
 }

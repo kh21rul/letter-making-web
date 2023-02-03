@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Domisili;
+use App\Models\Usaha;
 use App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -33,5 +34,6 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
 
         Domisili::factory(10)->create();
+        Usaha::factory(10)->create();
     }
 }

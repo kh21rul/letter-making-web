@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Usaha extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function getRouteKeyName()
+    {
+        return 'noSurat';
+    }
 }

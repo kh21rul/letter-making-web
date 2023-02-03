@@ -15,12 +15,12 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="/dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Surat</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ Request::is('domisili') || Request::is('usaha') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Surat</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="#" class="dropdown-item"><i class="bi bi-house"></i>  Ket Domisili</a>
-                            <a href="#" class="dropdown-item"><i class="bi bi-shop-window"></i>  Ket Usaha</a>
+                            <a href="/domisili" class="dropdown-item {{ Request::is('domisili') ? 'active' : '' }}"><i class="bi bi-house"></i>  Ket Domisili</a>
+                            <a href="/usaha" class="dropdown-item {{ Request::is('usaha') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Usaha</a>
                         </div>
                     </div>
                 </div>
