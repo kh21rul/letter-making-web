@@ -40,7 +40,7 @@
                             <td>{{ $domisili->noSurat }}</td>
                             <td>{{ $domisili->nama }}</td>
                             <td>{{ date('d M Y', strtotime($domisili->tglSurat)); }}</td>
-                            <td><a class="btn btn-sm btn-primary" href="/domisili/{{ $domisili->noSurat }}">Detail</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="/dashboard/domisili/{{ $domisili->noSurat }}">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -40,7 +40,7 @@
                             <td>{{ $usaha->noSurat }}</td>
                             <td>{{ $usaha->nama }}</td>
                             <td>{{ date('d M Y', strtotime($usaha->tglSurat)); }}</td>
-                            <td><a class="btn btn-sm btn-primary" href="/usaha/{{ $usaha->noSurat }}">Detail</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="/dashboard/usaha/{{ $usaha->noSurat }}">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>

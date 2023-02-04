@@ -43,7 +43,7 @@ Route::controller(RegisterController::class)->group(function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::resource('/domisili', DashboardDomController::class)->middleware('auth');
-Route::resource('/usaha', DashboardUsaController::class)->middleware('auth');
+Route::resource('/dashboard/domisili', DashboardDomController::class)->middleware('auth');
+Route::resource('/dashboard/usaha', DashboardUsaController::class)->middleware('auth');
 
 // Route::get('/domisili/cetak_pdf', [DomisiliController::class, 'cetak_pdf']);
