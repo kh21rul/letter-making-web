@@ -83,7 +83,10 @@ class DashboardUsaController extends Controller
      */
     public function edit(Usaha $usaha)
     {
-        //
+        return view('dashboard.usahas.edit', [
+            'title' => 'Usaha',
+            'usaha' => $usaha,
+        ]);
     }
 
     /**
@@ -95,7 +98,29 @@ class DashboardUsaController extends Controller
      */
     public function update(Request $request, Usaha $usaha)
     {
-        //
+        $rules = [
+            'kodeSurat' => 'required|numeric',
+            'nama' => 'required|max:255',
+            'nik' => 'required|numeric',
+            'tempatTglLahir' => 'required|max:255',
+            'pekerjaan' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'keterangan' => 'required|max:255',
+            'tglSurat' => 'required|date',
+            'ttd' => 'required|max:255',
+            'namaTtd' => 'required|max:255',
+        ];
+
+        if ($request->noSurat != $usaha->noSurat) {
+            $rules['noSurat'] = 'required|numeric|unique:usahas';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        Usaha::where('id', $usaha->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/usaha')->with('success', 'Surat berhasil di edit!');
     }
 
     /**
@@ -106,6 +131,8 @@ class DashboardUsaController extends Controller
      */
     public function destroy(Usaha $usaha)
     {
-        //
+        Usaha::destroy($usaha->id);
+
+        return redirect('/dashboard/usaha')->with('success', 'Surat berhasil dihapus!');
     }
 }

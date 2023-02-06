@@ -48,8 +48,12 @@
                             <td>{{ date('d M Y', strtotime($usaha->tglSurat)); }}</td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="/dashboard/usaha/{{ $usaha->noSurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                <a class="btn btn-sm btn-danger" href="#">Hapus</a>
+                                <a class="btn btn-sm btn-warning" href="/dashboard/usaha/{{ $usaha->noSurat }}/edit">Edit</a>
+                                <form action="/dashboard/usaha/{{ $usaha->noSurat }}" method="post" class="d-inline">
+                                    @method('delete')
+                                    @csrf 
+                                    <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Kilik Oke Untuk Menghapus')">Hapus</button>
+                                </form>
                                 <a class="btn btn-sm btn-success" href="#">Cetak</a>
                             </td>
                         </tr>

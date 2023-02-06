@@ -13,7 +13,7 @@
                 <p>{{ $domisili->tempatTglLahir }}</p>
                 <p>{{ $domisili->pekerjaan }}</p>
                 <p>{{ $domisili->alamat }}</p>
-                <p>{{ $domisili->keterangan }}</p>
+                <p>{!! $domisili->keterangan !!}</p>
                 <p>{{ $domisili->tglSurat }}</p>
                 <p>{{ $domisili->ttd }}</p>
                 <p>{{ $domisili->namaTtd }}</p>

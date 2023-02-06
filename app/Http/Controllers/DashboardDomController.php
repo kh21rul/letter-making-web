@@ -71,7 +71,6 @@ class DashboardDomController extends Controller
     {
         return view('dashboard.domisilis.show', [
             'title' => 'Domisili',
-            'active' => 'domisili',
             'domisili' => $domisili,
         ]);
     }
@@ -84,7 +83,10 @@ class DashboardDomController extends Controller
      */
     public function edit(Domisili $domisili)
     {
-        //
+        return view('dashboard.domisilis.edit', [
+            'title' => 'Edit',
+            'domisili' => $domisili,
+        ]);
     }
 
     /**
@@ -96,7 +98,29 @@ class DashboardDomController extends Controller
      */
     public function update(Request $request, Domisili $domisili)
     {
-        //
+        $rules = [
+            'kodeSurat' => 'required|numeric',
+            'nama' => 'required|max:255',
+            'nik' => 'required|numeric',
+            'tempatTglLahir' => 'required|max:255',
+            'pekerjaan' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'keterangan' => 'required|max:255',
+            'tglSurat' => 'required|date',
+            'ttd' => 'required|max:255',
+            'namaTtd' => 'required|max:255',
+        ];
+
+        if ($request->noSurat != $domisili->noSurat) {
+            $rules['noSurat'] = 'required|numeric|unique:domisilis';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        Domisili::where('id', $domisili->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/domisili')->with('success', 'Surat berhasil di edit!');
     }
 
     /**
@@ -107,6 +131,8 @@ class DashboardDomController extends Controller
      */
     public function destroy(Domisili $domisili)
     {
-        //
+        Domisili::destroy($domisili->id);
+
+        return redirect('/dashboard/domisili')->with('success', 'Surat berhasil dihapus!');
     }
 }
