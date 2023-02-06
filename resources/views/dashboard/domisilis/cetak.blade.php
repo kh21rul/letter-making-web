@@ -6,9 +6,7 @@
 <body>
 <table align="center" border="0" cellpadding="1" style="width: 700px;"><tbody>
 <tr>     <td colspan="3"><div align="center">
-<span style="font-family: Verdana; font-size: x-small;"><b>SMK INFORMATIKA SUMEDANG
-
-jln. Anggrek situ no.19 telp.(0261) 202767</b></span>
+<span style="font-family: Verdana; font-size: x-small;">{{ $title }}<b>SMK INFORMATIKA SUMEDANG jln. Anggrek situ no.19 telp.(0261) 202767</b></span>
 <hr />
 </div>
 </td>   </tr>

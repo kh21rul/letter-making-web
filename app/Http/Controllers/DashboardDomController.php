@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Domisili;
 use Illuminate\Http\Request;
+use PDF;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardDomController extends Controller
@@ -134,5 +135,14 @@ class DashboardDomController extends Controller
         Domisili::destroy($domisili->id);
 
         return redirect('/dashboard/domisili')->with('success', 'Surat berhasil dihapus!');
+    }
+
+    public function cetak(Domisili $domisili)
+    {
+        $pdf = PDF::loadview('dashboard.domisilis.cetak', [
+            'title' => 'Cetak',
+            'domisili' => $domisili,
+        ]);
+        return $pdf->stream();
     }
 }

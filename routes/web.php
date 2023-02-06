@@ -34,8 +34,10 @@ Route::controller(RegisterController::class)->group(function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard/cetak_pdf', [DashboardController::class, 'cetak_pdf'])->middleware('auth');
 
+Route::get('/dashboard/domisili/{domisili:noSurat}/cetak', [DashboardDomController::class, 'cetak'])->middleware('auth');
 Route::resource('/dashboard/domisili', DashboardDomController::class)->middleware('auth');
 Route::resource('/dashboard/usaha', DashboardUsaController::class)->middleware('auth');
 
-// Route::get('/domisili/cetak_pdf', [DomisiliController::class, 'cetak_pdf']);
+// Route::get('/dashboard/domisili/cetak_pdf', [DashboardDomController::class, 'cetak_pdf'])->middleware('auth');

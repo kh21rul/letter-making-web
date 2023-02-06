@@ -55,7 +55,7 @@
                                     <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Kilik Oke Untuk Menghapus')">Hapus</button>
                                 </form>
                                 {{-- <a class="btn btn-sm btn-danger" href="#">Hapus</a> --}}
-                                <a class="btn btn-sm btn-success" href="#">Cetak</a>
+                                <a class="btn btn-sm btn-success" href="/dashboard/domisili/{{ $domisili->noSurat }}/cetak">Cetak</a>
                             </td>
                         </tr>
                         @endforeach
