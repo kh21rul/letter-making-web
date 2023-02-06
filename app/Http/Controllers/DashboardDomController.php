@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Domisili;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardDomController extends Controller
 {
@@ -16,8 +17,8 @@ class DashboardDomController extends Controller
     {
         return view('dashboard.domisilis.index', [
             'title' => 'Domisili',
-            'active' => 'domisili',
-            'domisilis' => Domisili::latest()->paginate(10),
+            'domisilis' => Domisili::latest()->paginate(8),
+            'totalDomisili' => Domisili::count(),
         ]);
     }
 
@@ -28,7 +29,9 @@ class DashboardDomController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.domisilis.create', [
+            'title' => 'Domisili',
+        ]);
     }
 
     /**
@@ -39,7 +42,23 @@ class DashboardDomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kodeSurat' => 'required|numeric',
+            'noSurat' => 'required|numeric',
+            'nama' => 'required|max:255',
+            'nik' => 'required|numeric',
+            'tempatTglLahir' => 'required|max:255',
+            'pekerjaan' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'keterangan' => 'required|max:255',
+            'tglSurat' => 'required|date',
+            'ttd' => 'required|max:255',
+            'namaTtd' => 'required|max:255',
+        ]);
+
+        Domisili::create($validatedData);
+
+        return redirect('/dashboard/domisili')->with('success', 'Surat berhasil ditambahkan!');
     }
 
     /**

@@ -17,7 +17,7 @@ class DomisiliFactory extends Factory
     public function definition()
     {
         return [
-            'kodeSurat' => $this->faker->word,
+            'kodeSurat' => $this->faker->randomNumber(),
             'noSurat' => $this->faker->randomNumber(),
             'nama' => $this->faker->name,
             'nik' => $this->faker->randomNumber(),

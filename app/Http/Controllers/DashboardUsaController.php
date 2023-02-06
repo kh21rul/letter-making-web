@@ -16,8 +16,8 @@ class DashboardUsaController extends Controller
     {
         return view('dashboard.usahas.index', [
             'title' => 'Usaha',
-            'active' => 'usaha',
-            'usahas' => Usaha::latest()->paginate(10),
+            'usahas' => Usaha::latest()->paginate(8),
+            'totalUsaha' => Usaha::count(),
         ]);
     }
 
@@ -28,7 +28,9 @@ class DashboardUsaController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.usahas.create', [
+            'title' => 'Usaha',
+        ]);
     }
 
     /**
@@ -39,7 +41,23 @@ class DashboardUsaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kodeSurat' => 'required|numeric',
+            'noSurat' => 'required|numeric',
+            'nama' => 'required|max:255',
+            'nik' => 'required|numeric',
+            'tempatTglLahir' => 'required|max:255',
+            'pekerjaan' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'keterangan' => 'required|max:255',
+            'tglSurat' => 'required|date',
+            'ttd' => 'required|max:255',
+            'namaTtd' => 'required|max:255',
+        ]);
+
+        Usaha::create($validatedData);
+
+        return redirect('/dashboard/usaha')->with('success', 'Surat berhasil ditambahkan!');
     }
 
     /**

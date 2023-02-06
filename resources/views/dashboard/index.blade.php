@@ -9,7 +9,7 @@
                     <i class="fa fa-chart-line fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Total Surat Keterangan Domisili</p>
-                        <h6 class="mb-0">{{ $domisilis->count() }}</h6>
+                        <h6 class="mb-0">{{ $totalDomisili }}</h6>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <i class="fa fa-chart-bar fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Total Surat Keterangan Usaha</p>
-                        <h6 class="mb-0">{{ $domisilis->count() }}</h6>
+                        <h6 class="mb-0">{{ $totalUsaha }}</h6>
                     </div>
                 </div>
             </div>
@@ -30,8 +30,8 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Daftar Surat Keterangan Domisi</h6>
-                <a href="">Show All</a>
+                <h6 class="mb-0">Daftar Surat Keterangan Domisili Terbaru</h6>
+                <a href="/dashboard/domisili">Lihat Semua</a>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -40,7 +40,6 @@
                             <th scope="col">No Surat</th>
                             <th scope="col">Nama Warga</th>
                             <th scope="col">Tanggal Surat</th>
-                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,7 +48,6 @@
                             <td>{{ $domisili->noSurat }}</td>
                             <td>{{ $domisili->nama }}</td>
                             <td>{{ date('d M Y', strtotime($domisili->tglSurat)); }}</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -63,8 +61,8 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Daftar Surat Keterangan Usaha</h6>
-                <a href="">Show All</a>
+                <h6 class="mb-0">Daftar Surat Keterangan Usaha Terbaru</h6>
+                <a href="/dashboard/usaha">Lihat Semua</a>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -73,7 +71,6 @@
                             <th scope="col">No Surat</th>
                             <th scope="col">Nama Warga</th>
                             <th scope="col">Tanggal Surat</th>
-                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,7 +79,6 @@
                             <td>{{ $usaha->noSurat }}</td>
                             <td>{{ $usaha->nama }}</td>
                             <td>{{ date('d M Y', strtotime($usaha->tglSurat)); }}</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>

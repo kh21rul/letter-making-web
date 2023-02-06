@@ -22,14 +22,6 @@ use App\Http\Controllers\DashboardUsaController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'index')->name('login')->middleware('guest');
     Route::post('/login', 'authenticate');

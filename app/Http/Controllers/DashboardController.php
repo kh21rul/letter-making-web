@@ -12,9 +12,10 @@ class DashboardController extends Controller
     {
         return view('dashboard.index', [
             'title' => 'Dashboard',
-            'active' => 'dashboard',
-            'domisilis' => Domisili::latest()->paginate(10),
-            'usahas' => Usaha::latest()->paginate(10),
+            'domisilis' => Domisili::latest()->paginate(5),
+            'usahas' => Usaha::latest()->paginate(5),
+            'totalDomisili' => Domisili::count(),
+            'totalUsaha' => Usaha::count(),
         ]);
     }
 }
