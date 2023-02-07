@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usaha;
 use Illuminate\Http\Request;
+use PDF;
 
 class DashboardUsaController extends Controller
 {
@@ -134,5 +135,14 @@ class DashboardUsaController extends Controller
         Usaha::destroy($usaha->id);
 
         return redirect('/dashboard/usaha')->with('success', 'Surat berhasil dihapus!');
+    }
+
+    public function cetak(Usaha $usaha)
+    {
+        $pdf = PDF::loadview('dashboard.usahas.cetak', [
+            'title' => 'Cetak',
+            'usaha' => $usaha,
+        ])->setPaper('a4', 'potrait');
+        return $pdf->stream('Usaha_' . $usaha->noSurat . '.pdf');
     }
 }

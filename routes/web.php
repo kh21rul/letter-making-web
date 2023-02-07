@@ -37,6 +37,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 // Route::get('/dashboard/cetak_pdf', [DashboardController::class, 'cetak_pdf'])->middleware('auth');
 
 Route::get('/dashboard/domisili/{domisili:noSurat}/cetak', [DashboardDomController::class, 'cetak'])->middleware('auth');
+Route::get('/dashboard/usaha/{usaha:noSurat}/cetak', [DashboardUsaController::class, 'cetak'])->middleware('auth');
 Route::resource('/dashboard/domisili', DashboardDomController::class)->middleware('auth');
 Route::resource('/dashboard/usaha', DashboardUsaController::class)->middleware('auth');
 

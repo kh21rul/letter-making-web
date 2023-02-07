@@ -50,8 +50,8 @@ class DashboardDomController extends Controller
             'nik' => 'required|numeric',
             'tempatTglLahir' => 'required|max:255',
             'pekerjaan' => 'required|max:255',
-            'alamat' => 'required|max:255',
-            'keterangan' => 'required|max:255',
+            'alamat' => 'required',
+            'keterangan' => 'required',
             'tglSurat' => 'required|date',
             'ttd' => 'required|max:255',
             'namaTtd' => 'required|max:255',
@@ -142,7 +142,7 @@ class DashboardDomController extends Controller
         $pdf = PDF::loadview('dashboard.domisilis.cetak', [
             'title' => 'Cetak',
             'domisili' => $domisili,
-        ]);
-        return $pdf->stream();
+        ])->setPaper('a4', 'potrait');
+        return $pdf->stream('Domisili_' . '' . $domisili->noSurat . '.pdf');
     }
 }
