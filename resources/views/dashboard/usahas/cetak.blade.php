@@ -52,29 +52,29 @@
       <br /><br />
       <table width="450">
         <tr>
-          <td width="200">Nama</td>
+          <td width="120">Nama</td>
           <td width="10">:</td>
           <td width="335">{{ $usaha->nama }}</td>
         </tr>
         <tr>
-          <td width="200">NIK</td>
+          <td width="120">NIK</td>
           <td width="10">:</td>
           <td width="335">{{ $usaha->nik }}</td>
         </tr>
         <tr>
-          <td width="200">Tempat, Tanggal Lahir</td>
+          <td width="120">Tempat, Tanggal Lahir</td>
           <td width="10">:</td>
           <td width="335">{{ $usaha->tempatTglLahir }}</td>
         </tr>
         <tr>
-          <td width="200">Pekerjaan</td>
+          <td width="120">Pekerjaan</td>
           <td width="10">:</td>
           <td width="335">{{ $usaha->pekerjaan }}</td>
         </tr>
         <tr>
-          <td width="200">Alamat</td>
+          <td width="120">Alamat</td>
           <td width="10">:</td>
-          <td width="300">{{ $usaha->alamat }}</td>
+          <td width="335">{{ $usaha->alamat }}</td>
         </tr>
       </table>
       <br /><br />
