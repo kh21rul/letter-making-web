@@ -17,8 +17,8 @@ class UsahaFactory extends Factory
     public function definition()
     {
         return [
-            'kodeSurat' => $this->faker->word,
-            'noSurat' => $this->faker->randomNumber(),
+            'kodeSurat' => $this->faker->randomNumber(3),
+            'noSurat' => $this->faker->randomNumber(3),
             'nama' => $this->faker->name,
             'nik' => $this->faker->randomNumber(),
             'tempatTglLahir' => $this->faker->word,

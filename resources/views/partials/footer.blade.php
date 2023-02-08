@@ -7,9 +7,8 @@
                         &copy; <a href="http://surat-desa.test/">surat-desa.test</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                            href="https://themewagon.com">ThemeWagon</a>
+                        Created By <a href="#">KKNT Kel 36</a> 2022 <a
+                            href=https://unimal.ac.id/">UNIMAL</a>
                     </div>
                 </div>
             </div>

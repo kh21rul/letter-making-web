@@ -2,7 +2,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="/" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="bi bi-envelope"></i> Arsip Surat</h3>
+                    <h3 class="text-primary"><img width="35px" src="{{ asset('img/iconWeb.png') }}" alt="iconWeb"> Arsip Surat</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
